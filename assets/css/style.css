@@ -29,7 +29,6 @@ textarea {
 .time-block {
     text-align: center;
     border-radius: 15px;
-    background:lightpink;
 }
 
 .row {
@@ -37,9 +36,8 @@ textarea {
     height: 80px;
     border-top: 1px solid white;
     width:100%;
-    background-color:lightblue;
-    /* display:flex;
-    flex-wrap:wrap; */
+    display:flex;
+    flex-wrap:wrap;
 }
 
 .hour {
@@ -47,6 +45,9 @@ textarea {
     color: #000000;
     border-top: 1px dashed #000000;
     width: 15%;
+    text-align: right;
+    padding-right:10px;
+    padding-top:10px;
 }
 
 .past {

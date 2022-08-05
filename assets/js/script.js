@@ -1,6 +1,19 @@
-var currentTime = moment();
+var currentTime = moment().format("dddd, MMMM Do");
 
 var todayEl = $('#currentDay');
+
+todayEl.text(currentTime);
+
+function testingAppendDivAndOthers() {
+    var rowEl = $('<div>');
+    var hourEl = $('<div>');
+    var descriptionEl = $('<textarea>');
+    var btnEl = $('<btn>');
+    var timeBlockEl = $('#timeBlockEl');
+
+    
+
+}
 
 // Creating new element jQuery tag
 // var titleEl = $('<h1>');

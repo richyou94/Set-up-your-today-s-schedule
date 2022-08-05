@@ -14,6 +14,11 @@ function testingAppendDivAndOthers() {
     hourEl.text("testing hour");
     btnEl.text("save");
 
+    rowEl.addClass('row');
+    hourEl.addClass('hour');
+    descriptionEl.addClass('description');
+    btnEl.addClass('saveBtn');
+    
     
     
 

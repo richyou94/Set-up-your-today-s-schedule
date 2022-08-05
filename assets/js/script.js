@@ -11,6 +11,10 @@ function testingAppendDivAndOthers() {
     var btnEl = $('<btn>');
     var timeBlockEl = $('#timeBlockEl');
 
+    hourEl.text("testing hour");
+    btnEl.text("save");
+
+    
     
 
 }

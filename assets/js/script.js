@@ -10,15 +10,19 @@ function testingAppendDivAndOthers() {
     var descriptionEl = $('<textarea>');
     var btnEl = $('<btn>');
     var timeBlockEl = $('#timeBlockEl');
+    var pFontEl = $('<p>');
 
     hourEl.text("testing hour");
-    btnEl.text("save");
+    // btnEl.text("save");
+    pFontEl.text("SAVE")
 
     rowEl.addClass('row');
     hourEl.addClass('hour');
     descriptionEl.addClass('description');
     btnEl.addClass('saveBtn');
     
+    btnEl.append(pFontEl);
+
     rowEl.append(hourEl);
     rowEl.append(descriptionEl);
     rowEl.append(btnEl);

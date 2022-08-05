@@ -74,6 +74,13 @@ textarea {
     width: 15%;
 }
 
+.saveBtn img {
+    width: 30px;
+    margin-left: 50%;
+    margin-right: 50%;
+    align-items:center;
+}
+
 .saveBtn i:hover {
     font-size: 20px;
     transition: all 0.3s ease-in-out;

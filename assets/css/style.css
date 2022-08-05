@@ -69,16 +69,13 @@ textarea {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: #06aed5;
+    background-color: #afe1ed;
     color: white;
     width: 15%;
 }
 
 .saveBtn img {
     width: 30px;
-    margin-left: 50%;
-    margin-right: 50%;
-    align-items:center;
 }
 
 .saveBtn i:hover {

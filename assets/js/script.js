@@ -10,18 +10,21 @@ function testingAppendDivAndOthers() {
     var descriptionEl = $('<textarea>');
     var btnEl = $('<btn>');
     var timeBlockEl = $('#timeBlockEl');
-    var pFontEl = $('<p>');
+    var btnImageEl = $('<img>');
 
     hourEl.text("testing hour");
     // btnEl.text("save");
-    pFontEl.text("SAVE")
+    btnImageEl.attr('src', './assets/images/image-save-button.png');
 
     rowEl.addClass('row');
     hourEl.addClass('hour');
     descriptionEl.addClass('description');
     btnEl.addClass('saveBtn');
+    btnImageEl.addClass('mx-auto d-block')
+
+    btnEl.attr('style', 'padding-top:25px;')
     
-    btnEl.append(pFontEl);
+    btnEl.append(btnImageEl);
 
     rowEl.append(hourEl);
     rowEl.append(descriptionEl);

@@ -19,7 +19,9 @@ function testingAppendDivAndOthers() {
     descriptionEl.addClass('description');
     btnEl.addClass('saveBtn');
     
-    
+    rowEl.append(hourEl);
+    rowEl.append(descriptionEl);
+    rowEl.append(btnEl);
     
 
 }

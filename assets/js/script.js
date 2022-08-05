@@ -23,6 +23,7 @@ function testingAppendDivAndOthers() {
     rowEl.append(descriptionEl);
     rowEl.append(btnEl);
     
+    timeBlockEl.append(rowEl);
 
 }
 

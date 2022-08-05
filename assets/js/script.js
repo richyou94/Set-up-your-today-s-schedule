@@ -24,8 +24,9 @@ function testingAppendDivAndOthers() {
     rowEl.append(btnEl);
     
     timeBlockEl.append(rowEl);
-
 }
+
+testingAppendDivAndOthers();
 
 // Creating new element jQuery tag
 // var titleEl = $('<h1>');

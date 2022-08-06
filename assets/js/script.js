@@ -11,32 +11,38 @@ var btnEl = $('<btn>');
 var timeBlockEl = $('#timeBlockEl');
 var btnImageEl = $('<img>');
 
+createRows(9, 17);
 function createRows(A, B) {
-
-var startingHour = moment(A + " AM", "HA")
-hourEl.text();
-console.log(startingHour.format("HA"));
-// btnEl.text("save");
-btnImageEl.attr('src', './assets/images/image-save-button.png');
-
-rowEl.addClass('row');
-hourEl.addClass('hour');
-descriptionEl.addClass('description');
-btnEl.addClass('saveBtn');
-btnImageEl.addClass('mx-auto d-block')
-
-btnEl.attr('style', 'padding-top:25px;')
-
-btnEl.append(btnImageEl);
-
-rowEl.append(hourEl);
-rowEl.append(descriptionEl);
-rowEl.append(btnEl);
-
-timeBlockEl.append(rowEl);
+for (var i = A; i < B + 1; i++) {
+    console.log(i);
 }
 
-createRows(9, 17);
+
+// var startingHour = moment(i + " AM", "HA")
+// hourEl.text(startingHour.format("HA"));
+// console.log(startingHour.format("HA"));
+// // btnEl.text("save");
+// btnImageEl.attr('src', './assets/images/image-save-button.png');
+
+// rowEl.addClass('row');
+// hourEl.addClass('hour');
+// descriptionEl.addClass('description');
+// btnEl.addClass('saveBtn');
+// btnImageEl.addClass('mx-auto d-block')
+
+// btnEl.attr('style', 'padding-top:25px;')
+
+// btnEl.append(btnImageEl);
+
+// rowEl.append(hourEl);
+// rowEl.append(descriptionEl);
+// rowEl.append(btnEl);
+
+// timeBlockEl.append(rowEl);
+// }
+}
+
+
 // testing the functions
 // var startingHour = moment("9 AM", "H A")
 // console.log(startingHour);

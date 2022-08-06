@@ -11,37 +11,32 @@ var btnEl = $('<btn>');
 var timeBlockEl = $('#timeBlockEl');
 var btnImageEl = $('<img>');
 
+function createRows(A, B) {
 
-function testingAppendDivAndOthers() {
-    var rowEl = $('<div>');
-    var hourEl = $('<div>');
-    var descriptionEl = $('<textarea>');
-    var btnEl = $('<btn>');
-    var timeBlockEl = $('#timeBlockEl');
-    var btnImageEl = $('<img>');
+var startingHour = moment(A + " AM", "HA")
+hourEl.text();
+console.log(startingHour.format("HA"));
+// btnEl.text("save");
+btnImageEl.attr('src', './assets/images/image-save-button.png');
 
-    hourEl.text("testing hour");
-    // btnEl.text("save");
-    btnImageEl.attr('src', './assets/images/image-save-button.png');
+rowEl.addClass('row');
+hourEl.addClass('hour');
+descriptionEl.addClass('description');
+btnEl.addClass('saveBtn');
+btnImageEl.addClass('mx-auto d-block')
 
-    rowEl.addClass('row');
-    hourEl.addClass('hour');
-    descriptionEl.addClass('description');
-    btnEl.addClass('saveBtn');
-    btnImageEl.addClass('mx-auto d-block')
+btnEl.attr('style', 'padding-top:25px;')
 
-    btnEl.attr('style', 'padding-top:25px;')
-    
-    btnEl.append(btnImageEl);
+btnEl.append(btnImageEl);
 
-    rowEl.append(hourEl);
-    rowEl.append(descriptionEl);
-    rowEl.append(btnEl);
-    
-    timeBlockEl.append(rowEl);
+rowEl.append(hourEl);
+rowEl.append(descriptionEl);
+rowEl.append(btnEl);
+
+timeBlockEl.append(rowEl);
 }
 
-testingAppendDivAndOthers();
+createRows(9, 17);
 // testing the functions
 // var startingHour = moment("9 AM", "H A")
 // console.log(startingHour);

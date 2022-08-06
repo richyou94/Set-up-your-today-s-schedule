@@ -1,8 +1,16 @@
+// setting initial var for current moment and inputing the text to current Date
 var currentTime = moment().format("dddd, MMMM Do");
-
 var todayEl = $('#currentDay');
-
 todayEl.text(currentTime);
+
+// setting var for time table
+var rowEl = $('<div>');
+var hourEl = $('<div>');
+var descriptionEl = $('<textarea>');
+var btnEl = $('<btn>');
+var timeBlockEl = $('#timeBlockEl');
+var btnImageEl = $('<img>');
+
 
 function testingAppendDivAndOthers() {
     var rowEl = $('<div>');
@@ -34,6 +42,44 @@ function testingAppendDivAndOthers() {
 }
 
 testingAppendDivAndOthers();
+// testing the functions
+// var startingHour = moment("9 AM", "H A")
+// console.log(startingHour);
+// var endingHour = moment("17 PM", "H A")
+// console.log(endingHour);
+// startingHour.diff(endingHour, 'hours')
+// endingHour.diff(startingHour, 'hours')
+// console.log(startingHour.diff(endingHour, 'hours'))
+// console.log(endingHour.diff(startingHour, 'hours'))
+
+// function testFunc() {
+//     if (startingHour < endingHour) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+// console.log(testFunc());
+
+
+
+// var currentHour = moment().format("HA");
+// console.log(currentHour);
+// var a = moment([2007, 0, 28]);
+// var b = moment([2007, 0, 29]);
+// a.from(b) // "a day ago"
+// console.log(a.from(b))
+
+
+// testingCheckingHour();
+
+// function testingCheckingHour() {
+// var hourTimeEl = moment().format("h A");
+//     console.log(hourTimeEl);
+// }
+
+
+
 
 // Creating new element jQuery tag
 // var titleEl = $('<h1>');

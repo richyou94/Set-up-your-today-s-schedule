@@ -3,34 +3,35 @@ var currentTime = moment().format("dddd, MMMM Do");
 var todayEl = $('#currentDay');
 todayEl.text(currentTime);
 
-// setting var for time table
-var rowEl = $('<div>');
-var hourEl = $('<div>');
-var descriptionEl = $('<textarea>');
-var btnEl = $('<btn>');
-var timeBlockEl = $('#timeBlockEl');
-var btnImageEl = $('<img>');
 
-createRows(9, 17);
-function createRows(A, B) {
-for (var i = A; i < B + 1; i++) {
-    console.log(i);
+function saveSchedule () {
+    
 }
 
 
-// var startingHour = moment(i + " AM", "HA")
+// createRows(9, 17);
+// function createRows(A, B) {
+// for (var i = A; i < B + 1; i++) {
+    // setting var for time table
+// var rowEl = $('<div>');
+// var hourEl = $('<div>');
+// var descriptionEl = $('<textarea>');
+// var btnEl = $('<btn>');
+// var timeBlockEl = $('#timeBlockEl');
+// var btnImageEl = $('<img>');
+
+// var startingHour = moment(i + " AM", "HA");
 // hourEl.text(startingHour.format("HA"));
 // console.log(startingHour.format("HA"));
-// // btnEl.text("save");
 // btnImageEl.attr('src', './assets/images/image-save-button.png');
 
 // rowEl.addClass('row');
 // hourEl.addClass('hour');
 // descriptionEl.addClass('description');
 // btnEl.addClass('saveBtn');
-// btnImageEl.addClass('mx-auto d-block')
+// btnImageEl.addClass('mx-auto d-block');
 
-// btnEl.attr('style', 'padding-top:25px;')
+// btnEl.attr('style', 'padding-top:25px;');
 
 // btnEl.append(btnImageEl);
 
@@ -40,7 +41,7 @@ for (var i = A; i < B + 1; i++) {
 
 // timeBlockEl.append(rowEl);
 // }
-}
+// }
 
 
 // testing the functions

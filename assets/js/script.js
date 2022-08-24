@@ -6,7 +6,28 @@ var todayEl = $('#currentDay');
 
 var rowEl = $('.row');
 
-var scheduleList = [];
+var scheduleList = [
+    {   hour : "9AM",
+        description: ""},
+    {   hour : "10AM",
+        description: ""},
+    {   hour : "11AM",
+        description: ""},
+    {   hour : "12PM",
+        description: ""},
+    {   hour : "1PM",
+        description: ""},
+    {   hour : "2PM",
+        description: ""},
+    {   hour : "3PM",
+        description: ""},
+    {   hour : "4PM",
+        description: ""},
+    {   hour : "5PM",
+        description: ""}
+];
+
+
 // setting today's date in the text
 todayEl.text(currentDate);
 
@@ -23,6 +44,13 @@ var compareTime = function(selectedTime) {
     }
 }
 
+// rendering the local storage items into the description
+function renderDescription () {
+    for (var i=0; i< rowEl.length; i++) {
+        rowEl.eq(i).children('.description').text("");
+    }
+}
+renderDescription();
 
 // coloring the schedules with grey, red and green depends on 
 // past, present and future
@@ -45,15 +73,10 @@ function renderColor () {
     }
 }
 
-// function handleSaveBtn(event) {
-//     let btnClicked = $(event.target);
-//     let scheduleDescr = btnClicked.siblings('textarea').val();
-//     console.log("is this working?");
-//     console.log(scheduleDescr);
-// }
+
 
 var containerEl = $('#timeBlockEl');
-// testing save button
+// function everytime hits save button
 $('.saveBtn').on("click", function() {
     var scheduleDescr = $(this).siblings('textarea').val();
     var clickedTime = $(this).siblings('div').text();

@@ -12,15 +12,12 @@ var todayEl = $('#currentDay');
 todayEl.text(currentDate);
 
 // finding time status
-function compareTime(selectedTime) {
+var compareTime = function(selectedTime) {
     if (selectedTime - currentHour < 0) {
-        console.log("past");
         return "past";
     } else if (selectedTime - currentHour == 0) {
-        console.log("present")
         return "present";
     } else if (selectedTime - currentHour > 0) {
-        console.log("future");
         return "future";
     } else {
         console.log("error");
@@ -34,7 +31,23 @@ console.log(rowEl.length);
 // past, present and future
 function renderColor () {
     for (var i = 0; i < rowEl.length; i++) {
-        console.log(rowEl[i]);
+        let selectedHour = rowEl.eq(i).children('.hour').text();
+        let newHour = moment(selectedHour, "hA").format("H");
+        let descriptionColor = rowEl.eq(i).children('.description')
+        console.log(descriptionColor);
+    
+        if (compareTime(newHour) == "past") {
+            descriptionColor.attr("style", "background-color: lightgrey;")
+        } else if (compareTime(newHour) == "present") {
+            console.log("presentTesting");
+            descriptionColor.attr("style", "background-color: lightcoral;")
+        } else if (compareTime(newHour) == "future") {
+            console.log("futureTesting");
+            descriptionColor.attr("style", "background-color: lightgreen;")
+        } else {
+            console.log("error")
+        }
+
     }
 }
 

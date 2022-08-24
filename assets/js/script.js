@@ -113,10 +113,6 @@ $('.saveBtn').on("click", function() {
     // var clickedTime = $(this).siblings('div').text();
     var clickedIndex = $(this).parent().index();
 
-    if (scheduleDescr === "") {
-        return;
-    }
-
     
     
     scheduleList[clickedIndex].description = scheduleDescr

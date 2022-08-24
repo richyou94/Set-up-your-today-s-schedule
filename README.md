@@ -6,6 +6,7 @@ You, Yi Chan  (Richard) wrote the code for the html, css, and javascript.
 
 ## Link to deployed application
 https://yichanyourichard.github.io/Set-up-your-today-s-schedule/ (deployed github application)
+
 https://github.com/YichanYouRichard/Set-up-your-today-s-schedule (github repository link)
 
 ## Screenshots

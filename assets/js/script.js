@@ -43,11 +43,20 @@ var compareTime = function(selectedTime) {
         console.log("error");
     }
 }
+//initial function to bring local storage into the array
+function init() {
+    storedScheduleList = JSON.parse(localStorage.getItem("notdecidetitleyet"));
 
+    if (storedScheduleList !== null) {
+        scheduleList = storedScheduleList;
+    }
+}
 // rendering the local storage items into the description
 function renderDescription () {
     for (var i=0; i< rowEl.length; i++) {
         rowEl.eq(i).children('.description').text("");
+
+        var hourParsed = 
     }
 }
 renderDescription();

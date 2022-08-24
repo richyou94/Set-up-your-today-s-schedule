@@ -5,8 +5,8 @@ Challenge No.5, Work Day Scheduler using Third-Party APIs.
 You, Yi Chan  (Richard) wrote the code for the html, css, and javascript. 
 
 ## Link to deployed application
-https://yichanyourichard.github.io/Set-up-your-today-s-schedule/
-
+https://yichanyourichard.github.io/Set-up-your-today-s-schedule/ (deployed github application)
+https://github.com/YichanYouRichard/Set-up-your-today-s-schedule (github repository link)
 
 ## Screenshots
 ![screenshots of the deployed page](./assets/images/screenshot-1.png)

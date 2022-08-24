@@ -4,10 +4,9 @@ var currentDate = moment().format("dddd, MMMM Do");
 var currentHour = moment().format("H")
 var todayEl = $('#currentDay');
 
-// var testingPast = moment("8AM", "hA").format("H");
-// var testingPresent = moment("9AM", "hA").format("H");
-// var testingFuture = moment("5PM", "hA").format("H");
+var rowEl = $('.row');
 
+var scheduleList = [];
 // setting today's date in the text
 todayEl.text(currentDate);
 
@@ -24,8 +23,6 @@ var compareTime = function(selectedTime) {
     }
 }
 
-var rowEl = $('.row');
-console.log(rowEl.length);
 
 // coloring the schedules with grey, red and green depends on 
 // past, present and future
@@ -34,15 +31,12 @@ function renderColor () {
         let selectedHour = rowEl.eq(i).children('.hour').text();
         let newHour = moment(selectedHour, "hA").format("H");
         let descriptionColor = rowEl.eq(i).children('.description')
-        console.log(descriptionColor);
     
         if (compareTime(newHour) == "past") {
             descriptionColor.attr("style", "background-color: lightgrey;")
         } else if (compareTime(newHour) == "present") {
-            console.log("presentTesting");
             descriptionColor.attr("style", "background-color: lightcoral;")
         } else if (compareTime(newHour) == "future") {
-            console.log("futureTesting");
             descriptionColor.attr("style", "background-color: lightgreen;")
         } else {
             console.log("error")
@@ -50,5 +44,29 @@ function renderColor () {
 
     }
 }
+
+// function handleSaveBtn(event) {
+//     let btnClicked = $(event.target);
+//     let scheduleDescr = btnClicked.siblings('textarea').val();
+//     console.log("is this working?");
+//     console.log(scheduleDescr);
+// }
+
+var containerEl = $('#timeBlockEl');
+// testing save button
+$('.saveBtn').on("click", function() {
+    var scheduleDescr = $(this).siblings('textarea').val();
+    var clickedTime = $(this).siblings('div').text();
+
+    if (scheduleDescr === "") {
+        return;
+    }
+
+    var scheduleLog = {
+        time: clickedTime,
+        description: scheduleDescr
+    }; 
+    console.log(scheduleLog);
+})
 
 renderColor();

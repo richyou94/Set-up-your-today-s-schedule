@@ -5,6 +5,7 @@ var currentHour = moment().format("H")
 var todayEl = $('#currentDay');
 
 var rowEl = $('.row');
+var containerEl = $('#timeBlockEl');
 
 var scheduleList = [
     {   hour : "9AM",
@@ -45,21 +46,44 @@ var compareTime = function(selectedTime) {
 }
 //initial function to bring local storage into the array
 function init() {
-    storedScheduleList = JSON.parse(localStorage.getItem("notdecidetitleyet"));
+    storedScheduleList = JSON.parse(localStorage.getItem("scheduleListUpdate"));
 
     if (storedScheduleList !== null) {
         scheduleList = storedScheduleList;
     }
+    renderDescription();
 }
 // rendering the local storage items into the description
 function renderDescription () {
-    for (var i=0; i< rowEl.length; i++) {
-        rowEl.eq(i).children('.description').text("");
+    if (typeof scheduleList.length == "undefined") {
+        let hourRowEl = rowEl.children('.hour');
+        let descrRowEl = rowEl.children('.description');
+        hourRowEl.text("");
+        descrRowEl.text("");
 
-        var hourParsed = 
-    }
+        let hourParsed = scheduleList.hour;
+        let descrParsed = scheduleList.description;
+        hourRowEl.text(hourParsed);
+        descrRowEl.text(descrParsed);
+
+        renderColor();
+    } else {
+        for (var i=0; i < rowEl.length; i++) {
+        let hourRowEl = rowEl.eq(i).children('.hour');
+        let descrRowEl = rowEl.eq(i).children('.description');
+
+        hourRowEl.text("");
+        descrRowEl.text("");
+
+        let hourParsed = scheduleList[i].hour;
+        let descrParsed = scheduleList[i].description;
+
+        hourRowEl.text(hourParsed)
+        descrRowEl.text(descrParsed); 
+        renderColor();
+    } }
+    // console.log(scheduleList);
 }
-renderDescription();
 
 // coloring the schedules with grey, red and green depends on 
 // past, present and future
@@ -76,29 +100,35 @@ function renderColor () {
         } else if (compareTime(newHour) == "future") {
             descriptionColor.attr("style", "background-color: lightgreen;")
         } else {
-            console.log("error")
+            console.log("error???")
         }
 
     }
 }
 
 
-
-var containerEl = $('#timeBlockEl');
 // function everytime hits save button
 $('.saveBtn').on("click", function() {
     var scheduleDescr = $(this).siblings('textarea').val();
-    var clickedTime = $(this).siblings('div').text();
+    // var clickedTime = $(this).siblings('div').text();
+    var clickedIndex = $(this).parent().index();
 
     if (scheduleDescr === "") {
         return;
     }
 
-    var scheduleLog = {
-        time: clickedTime,
-        description: scheduleDescr
-    }; 
-    console.log(scheduleLog);
+    
+    
+    scheduleList[clickedIndex].description = scheduleDescr
+    console.log(scheduleList);
+    
+    saveToLocalStorage();
+    renderDescription();
+
 })
 
-renderColor();
+function saveToLocalStorage() {
+    localStorage.setItem("scheduleListUpdate", JSON.stringify(scheduleList))
+}
+
+init();
